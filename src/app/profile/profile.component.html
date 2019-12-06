@@ -1,42 +1,45 @@
-<div *ngIf="profile">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            {{profile.name}} <small>({{profile.login}})</small>
-            <span *ngIf="profile.company">, Works at {{profile.company}}</span>
-            {{profile.location}}
-        </div>
-        <div class="class panel-body">
-            <div class="col-sm-3">
-                <img src="{{profile.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{user.name}} <small>({{user.login}})</small>
+                <span *ngIf="user.company"> Works at {{user.company}}</span>
+                {{user.location}}
             </div>
-            <div class="col sm-5">
-                <ul class="class list-group">
-                    <li class="list-group-item" *ngIf="profile.bio"> {{profile.bio}} </li>
+            <div class="class panel-body">
+                <div class="col-md-3">
+                    <img src="{{user.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
+                </div>
+                <div class="col-md-5">
+                    <ul class="class list-group">
+                        <li class="list-group-item" *ngIf="user.bio"> {{user.bio}} </li>
 
-                    <li class="list-group-item" *ngIf="profile.hireable"> Available for hire</li>
+                        <li class="list-group-item" *ngIf="user.hireable"> Available for hire</li>
 
-                    <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}"
-                            target="_blank">{{profile.blog}}</a></li>
+                        <li class="list-group-item" *ngIf="user.blog"><a href="{{user.blog}}"
+                                target="_blank">{{user.blog}}</a></li>
 
-                    <li class="list-group-item" *ngIf="profile.email"> <a href="emailto:{{profile.email}}"
-                            target="_blank">{{profile.email}}</a></li>
+                        <li class="list-group-item" *ngIf="profile.email"> <a href="emailto:{{user.email}}"
+                                target="_blank">{{user.email}}</a></li>
 
-                    <!-- <li class="list-group-item" *ngIf="profile.bio"> {{profile.bio}} </li> -->
-                </ul>
+                        <!-- <li class="list-group-item" *ngIf="profile.bio"> {{profile.bio}} </li> -->
+                    </ul>
 
-            </div>
-            <div class="col sm-4">
-                <div>
-                    <p>
-                        <span class="class label label-default">{{profile.followers}} Followers</span>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <p>
+                            <span class="class label label-default">{{user.followers}} Followers</span>
 
-                        <span class="class label label-primary"> Following {{profile.following}} </span>
+                            <span class="class label label-primary"> Following {{user.following}} </span>
 
-                        <span class="class label label-success"> Public gists {{profile.public_gists}} </span>
+                            <span class="class label label-success"> Public gists {{user.public_gists}} </span>
 
-                        <span class="class label label-info"> Public Repos {{profile.public_repos}} </span>
-                        
-                    </p>
+                            <span class="class label label-info"> Public Repos {{user.public_repos}} </span>
+
+                        </p>
+                        <p><a href="{{user.html_url}}" class="btn btn-success btn-sm">View profile on github</a></p>
+                    </div>
                 </div>
             </div>
         </div>
