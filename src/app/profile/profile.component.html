@@ -1,55 +1,73 @@
-<div class="container">
-    <h1> GITHUB SEARCH</h1>
-    <h3>An application for searching github users and their github repositories</h3>
-    <form class="search-form">
-        <div class="form-group">
-            <input type="text" class="form-control " placeholder="search username" [(ngModel)]="username"
-                name="username" (keyup)="findProfile()">
-        </div>
-    </form>
-
-    <div class="panel panel-default">
-        <div class="panel-header">
-            {{profile.name}} <small>({{profile.login}})</small>
-             Works at {{user.company}}</span>
-            {{profile.location}}
-        </div>
-        <div class="class panel-body">
-            <div class="col-md-3">
-                <img src="{{private.avatar_url}}" class="img-thumbnail github-avatar" alt="Profile Image">
-            </div>
-            <div class="col-md-5">
-                <ul class="class list-group">
-                    <li class="list-group-item"> {{profile.bio}} </li>
-
-                    <li class="list-group-item"> Available for hire</li>
-
-                    <li class="list-group-item" *ngIf="user.blog"><a href="{{user.blog}}"
-                            target="_blank">{{profile.blog}}</a></li>
-
-                    <li class="list-group-item" *ngIf="profile.email"> <a href="emailto:{{user.email}}"
-                            target="_blank">{{user.email}}</a></li>
-
-                    <!-- <li class="list-group-item" *ngIf="profile.bio"> {{profile.bio}} </li> -->
-                </ul>
-
-            </div>
-            <div class="col-md-4">
-                <div>
-                    <p>
-                        <span class="class label label-default">{{user.followers}} Followers</span>
-
-                        <span class="class label label-primary"> Following {{user.following}} </span>
-
-                        <span class="class label label-success"> Public gists {{user.public_gists}} </span>
-
-                        <span class="class label label-info"> Public Repos {{user.public_repos}} </span>
-
-                    </p>
-                    <p><a href="{{user.html_url}}" class="btn btn-success btn-sm">View profile on github</a></p>
-                </div>
-            </div>
-        </div>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<div class="container-fluid">
+  <div id="head">
+    <h1>GITHUB SEARCH</h1>
+    <p>An application for searching github repositories</p>
+  </div>
+  <form class="search-form">
+    <div class="form-group">
+      <input type="text" class="form-control " placeholder="search username" [(ngModel)]="username" name="username"
+        (keyup)="findProfile()">
     </div>
-</div>
-</div>
+  </form>
+
+
+  <div *ngIf="profile">
+    <div class="panel">
+      <div class="panel-header">
+        {{ profile.name }}
+      </div>
+      <div class="panel-body">
+        <h5 class="panel-title"></h5>
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-thumbnail githib-avatar" src="{{ profile.avatar_url }}" alt="" />
+          </div>
+          <div class="col-md-8">
+            <div class="stats">
+              <span class="badge badge-primary mr-1">
+                {{ profile.public_repos }} Public Repos</span>
+              <span class="badge badge-secondary mr-1">{{ profile.public_gists }} Gists</span>
+              <span class="badge badge-success mr-1">
+                {{ profile.followers }} Followers</span>
+              <span class="badge badge-danger mr-1">
+                {{ profile.following }} Following</span>
+            </div>
+
+            <ul class="list-group">
+              <li class="list-group-item">
+                <strong>Username:</strong>{{ profile.login }}
+              </li>
+              <li class="list-group-item">
+                <strong>Location:</strong>{{ profile.location }}
+              </li>
+              <li class="list-group-item">
+                <strong>Email:</strong>{{ profile.email }}
+              </li>
+              <li class="list-group-item">
+                <strong>Blog:</strong>{{profile .blog }}
+              </li>
+              <li class="list-group-item">
+                <strong>Member Since</strong>{{ profile.created_at|date }}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p><a href="{{profile.html_url}}" target="_blank" class="btn btn-success">View profile on github</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="repotitle">
+        <h3 class="repo-title">Repositories</h3>
+      </div>
+      <div class="panel" *ngFor="let repo of repos">
+
+        <div class="panel-body">
+          <h4 class="panel-title">{{repo.name}}</h4>
+          <p class="panel-text">{{repo.description}}</p>
+          <p class="panel-text">Created at: {{repo.created_at | date}}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
