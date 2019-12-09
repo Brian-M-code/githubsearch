@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <div class="container-fluid">
-  <div id="head">
+  <div id="head" text-center>
+    <img src="avatar.png" alt="Avatar" class="avatar">
     <h1>GITHUB SEARCH</h1>
     <p>An application for searching github repositories</p>
   </div>
@@ -45,7 +46,7 @@
                 <strong>Email:</strong>{{ profile.email }}
               </li>
               <li class="list-group-item">
-                <strong>Blog:</strong>{{profile .blog }}
+                <strong>Blog:</strong>{{profile.blog }}
               </li>
               <li class="list-group-item">
                 <strong>Member Since</strong>{{ profile.created_at|date }}
@@ -57,7 +58,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="col-md-"
+      <div class="col-md-6"
       <div class="repotitle">
         <h3 class="repo-title">Repositories</h3>
       </div>
