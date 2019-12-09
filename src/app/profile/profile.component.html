@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <div class="container-fluid">
   <div id="head" text-center>
-    <img src="avatar.png" alt="Avatar" class="avatar">
     <h1>GITHUB SEARCH</h1>
     <p>An application for searching github repositories</p>
   </div>
@@ -58,18 +57,20 @@
       </div>
     </div>
     <div class="container">
-      <div class="col-md-6"
-      <div class="repotitle">
-        <h3 class="repo-title">Repositories</h3>
-      </div>
-      <div class="panel" *ngFor="let repo of repos">
+      <div class="col-md-6">
+        <div class="repotitle">
+          <h3 class="repo-title">Repositories</h3>
+        </div>
+        <div class="panel" *ngFor="let repo of repos">
 
-        <div class="panel-body">
-          <h4 class="panel-title">{{repo.name}}</h4>
-          <p class="panel-text">{{repo.description}}</p>
-          <p class="panel-text">Created at: {{repo.created_at | date}}</p>
+          <div class="panel-body">
+            <h4 class="panel-title">{{repo.name}}</h4>
+            <p class="panel-text">{{repo.description}}</p>
+            <p class="panel-text">Created at: {{repo.created_at | date}}</p>
 
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
