@@ -16,7 +16,7 @@ An angular app where one can search github username and find their repositories
 - Clone the repository to local machine
 - In the terminal, cd to the root folder of the application
 - Run ng serve command
-- Navigate to the https://localhost:4200 in your browser.
+- Navigate to the https://localhost:4600 in your browser.
 
 ##### Application screenshot
 ![screenshot](src/assets/images/gitsearch.png)
@@ -43,7 +43,7 @@ An angular app where one can search github username and find their repositories
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4600/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
