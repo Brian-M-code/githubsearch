@@ -71,5 +71,5 @@ Incase of any inquiry contact me via
 - Email: mutuma.brian@yahoo.com
 
 ## License 
-<!-- [The MIT license](LICENSE)
-- Copyright (c) **Brian-M-Code** @2019 -->
+ [The MIT license](LICENSE)
+- Copyright (c) **Brian-M-Code** @2019
