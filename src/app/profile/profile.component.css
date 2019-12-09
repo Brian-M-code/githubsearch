@@ -1,8 +1,11 @@
 h1{
     padding-top: 50px;
-    text-align: left;
+    text-align: center;
     font-style: italic;
     color: red;
+}
+p{
+    text-align: center; 
 }
 
 img{

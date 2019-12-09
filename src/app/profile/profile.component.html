@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <div class="container-fluid">
-  <div id="head" text-center>
-    <h1>GITHUB <img src="https://icon-library.net/images/github-icon-vector/github-icon-vector-0.jpg" height="150px" width="150px"> SEARCH</h1>
-    <p>An application for searching github repositories</p>
+  <div id="head">
+    <h1 text-center>GITHUB <img src="https://icon-library.net/images/github-icon-vector/github-icon-vector-0.jpg" height="150px" width="150px"> SEARCH</h1>
+    <p text-center>An application for searching github repositories</p>
   </div>
   <form class="search-form">
     <div class="form-group">
@@ -59,15 +59,15 @@
     <div class="container">
       <div class="col-md-6">
         <div class="repotitle">
-          <h3 class="repo-title">Repositories</h3>
+          <h3 class="repo-title"><b>Repositories</b></h3>
         </div>
         <div class="panel" *ngFor="let repo of repos">
 
           <div class="panel-body">
-            <h4 class="panel-title">{{repo.name}}</h4>
+            <a href="repos.html_url" target="_blank"><h4 class="panel-title">{{repo.name}}</h4></a>
             <p class="panel-text">{{repo.description}}</p>
             <p class="panel-text">Created at: {{repo.created_at | date}}</p>
-
+            <!-- <p><a href="{{repo.html.url}}" class="text-align-center" target="_blank" class="view btn btn-outline-success">View this project on github</a></p> -->
           </div>
         </div>
       </div>
