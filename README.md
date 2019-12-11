@@ -8,6 +8,9 @@
 
 An angular app where one can search github username and find their repositories
 
+## Live link
+- https://brian-m-code.github.io/githubsearch/
+
 ### Technologies used
 - Project generated with Angular CLI version 7.1.4
 - HTML & CSS (Bootstrap)
