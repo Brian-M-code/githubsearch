@@ -22,7 +22,8 @@ An angular app where one can search github username and find their repositories
 - Navigate to the https://localhost:4600 in your browser.
 
 ##### Application screenshot
-![screenshot](src/assets/images/gitsearch.png)
+![screenshot](src/assets/images/gitapp.png)
+![screenshot](src/assets/images/git2.png)
 
 ## BDD
 
